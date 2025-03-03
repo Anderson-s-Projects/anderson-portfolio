@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
         
         {/* Title */}
         <h1 className="text-4xl md:text-6xl font-display font-bold mb-4 animate-fade-in">
-          <span className="block">Anderson's</span>
+          <span className="block">Anderson Paulino's</span>
           <span className="gradient-text text-glow">Profile</span>
         </h1>
         
