@@ -1,12 +1,55 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useEffect } from 'react';
+import ParticleBackground from '@/components/layout/ParticleBackground';
+import Navbar from '@/components/layout/Navbar';
+import Hero from '@/components/home/Hero';
+import About from '@/components/home/About';
+import Experience from '@/components/home/Experience';
+import Skills from '@/components/home/Skills';
+import Projects from '@/components/home/Projects';
+import Contact from '@/components/home/Contact';
+import Footer from '@/components/layout/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const href = this.getAttribute('href');
+        if (!href) return;
+        
+        document.querySelector(href)?.scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Page load animation
+    document.body.classList.add('animate-fade-in');
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen w-full bg-deep-bg">
+      {/* Interactive Particle Background */}
+      <ParticleBackground />
+      
+      {/* Navigation */}
+      <Navbar />
+      
+      {/* Main Content */}
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

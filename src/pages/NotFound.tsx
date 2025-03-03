@@ -1,24 +1,31 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import ParticleBackground from "@/components/layout/ParticleBackground";
 
 const NotFound = () => {
-  const location = useLocation();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
+  const goHome = () => {
+    navigate("/");
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <div className="min-h-screen flex items-center justify-center bg-deep-bg">
+      <ParticleBackground />
+      
+      <div className="relative z-10 text-center neuro-panel p-12 max-w-md mx-4">
+        <h1 className="text-6xl font-display font-bold mb-4 gradient-text">404</h1>
+        <div className="w-16 h-1 bg-accent-gradient mx-auto my-6 rounded-full"></div>
+        <p className="text-xl text-text-secondary mb-8">
+          Sorry, the page you are looking for doesn't exist.
+        </p>
+        <button
+          onClick={goHome}
+          className="neuro-button px-8 py-3 text-white hover:text-accent-purple transition-colors"
+        >
+          Return Home
+        </button>
       </div>
     </div>
   );
