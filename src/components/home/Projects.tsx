@@ -5,6 +5,30 @@ import ProjectCard from '../ui/ProjectCard';
 const Projects: React.FC = () => {
   const projects = [
     {
+      title: "Trade Game",
+      description: "Interactive trading simulation game that teaches financial concepts through gameplay mechanics, featuring real-time market simulation and portfolio tracking.",
+      image: "https://placehold.co/600x400/23283A/FFFFFF?text=Trade+Game",
+      technologies: ["JavaScript", "HTML5", "CSS3", "LocalStorage"],
+      demoLink: "https://anderson-s-projects.github.io/Trade-Game/",
+      githubLink: "https://github.com/Anderson-s-Projects/Trade-Game"
+    },
+    {
+      title: "Social Media Platform",
+      description: "Full-featured social networking platform with responsive design, real-time notifications, multimedia sharing, and comprehensive user engagement analytics.",
+      image: "https://placehold.co/600x400/23283A/FFFFFF?text=Social+Media",
+      technologies: ["React", "Firebase", "Node.js", "Express", "MongoDB"],
+      demoLink: "#",
+      githubLink: "#"
+    },
+    {
+      title: "E-Commerce Website",
+      description: "Feature-rich online store with secure payment processing, inventory management, personalized recommendations, and detailed analytics dashboard.",
+      image: "https://placehold.co/600x400/23283A/FFFFFF?text=E-Commerce",
+      technologies: ["Vue.js", "Stripe API", "Vuex", "Node.js", "PostgreSQL"],
+      demoLink: "#",
+      githubLink: "#"
+    },
+    {
       title: "Data Visualization Dashboard",
       description: "Interactive dashboard for visualizing complex datasets with real-time filtering, custom charts, and exportable reports.",
       image: "https://placehold.co/600x400/23283A/FFFFFF?text=Data+Dashboard",
@@ -13,18 +37,10 @@ const Projects: React.FC = () => {
       githubLink: "#"
     },
     {
-      title: "Network Security Monitor",
-      description: "Real-time network monitoring tool with threat detection algorithms and customizable alert systems for enterprise security teams.",
-      image: "https://placehold.co/600x400/23283A/FFFFFF?text=Security+Monitor",
-      technologies: ["TypeScript", "Node.js", "WebSockets", "Chart.js"],
-      demoLink: "#",
-      githubLink: "#"
-    },
-    {
-      title: "Marketing Analytics Platform",
-      description: "End-to-end marketing analytics solution for campaign tracking, audience segmentation, and ROI optimization.",
-      image: "https://placehold.co/600x400/23283A/FFFFFF?text=Marketing+Analytics",
-      technologies: ["Vue.js", "Python", "PostgreSQL", "TensorFlow"],
+      title: "Case Study: Finance System Integration",
+      description: "Comprehensive analysis and implementation of financial system integration for a mid-size enterprise, resulting in 35% efficiency increase and cost reduction.",
+      image: "https://placehold.co/600x400/23283A/FFFFFF?text=Case+Study",
+      technologies: ["Financial Analysis", "System Integration", "Process Optimization", "Data Migration"],
       demoLink: "#",
       githubLink: "#"
     }
