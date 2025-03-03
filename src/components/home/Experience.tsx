@@ -88,7 +88,7 @@ const Experience: React.FC = () => {
         
         <div ref={timelineRef} className="relative mt-16 max-w-3xl mx-auto">
           {/* Vertical line through timeline */}
-          <div className="absolute left-1/2 -ml-px h-full w-0.5 bg-gradient-to-b from-accent-purple via-accent-purple-light to-accent-blue"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-accent-purple via-accent-purple-light to-accent-blue"></div>
           
           {/* Timeline items */}
           {timelineItems.map((item, index) => (
@@ -106,7 +106,7 @@ const Experience: React.FC = () => {
               }}
             >
               {/* Timeline connector */}
-              <div className="absolute top-5 left-1/2 -translate-x-1/2 w-4 h-4">
+              <div className="absolute top-5 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
                 <Circle className="w-4 h-4 fill-deep-bg stroke-accent-purple stroke-2" />
               </div>
               
