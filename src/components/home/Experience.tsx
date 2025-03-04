@@ -64,7 +64,7 @@ const Experience: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  return <section id="experience" className="py-16 md:py-24 relative">
+  return <section id="experience" className="py-16 relative md:py-0">
       <div className="section-container">
         <h2 className="section-title text-center">Experience Timeline</h2>
         <p className="section-subtitle text-center">A journey through my professional development and achievements</p>
