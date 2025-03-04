@@ -17,8 +17,8 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-16 md:py-24 relative">
       <div className="section-container">
-        <h2 className="section-title text-center">Featured Projects</h2>
-        <p className="section-subtitle text-center">
+        <h2 className="section-title text-center mx-auto">Featured Projects</h2>
+        <p className="section-subtitle text-center mx-auto">
           Showcase of my work in front-end development and data-driven solutions
         </p>
         
