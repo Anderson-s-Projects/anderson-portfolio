@@ -1,3 +1,4 @@
+
 # Welcome to your Lovable project
 
 ## Project info
@@ -52,7 +53,7 @@ npm run dev
 
 ## What technologies are used for this project?
 
-This project is built with .
+This project is built with:
 
 - Vite
 - TypeScript
@@ -62,7 +63,13 @@ This project is built with .
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/1ff8d407-be0f-4076-9f40-1a75487ee1ab) and click on Share -> Publish.
+This project is configured to deploy automatically to GitHub Pages using GitHub Actions. When you push changes to the main branch, the workflow will build and deploy your site.
+
+To set up GitHub Pages:
+1. Go to your repository's Settings
+2. Navigate to Pages section
+3. Under "Build and deployment", select "GitHub Actions" as the source
+4. Your site will be available at `https://<username>.github.io/<repository-name>/`
 
 ## I want to use a custom domain - is that possible?
 
