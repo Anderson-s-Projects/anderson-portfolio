@@ -24,7 +24,14 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // In a real implementation, you would send this data to a backend service
+    // For now, we'll simulate a form submission with a delay
+    const mailtoLink = `mailto:andersonpaulino1982@gmail.com?subject=Portfolio Contact: ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`From: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
+    
+    // Open the user's email client
+    window.open(mailtoLink, '_blank');
+    
+    // Simulate form submission completion
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus({
