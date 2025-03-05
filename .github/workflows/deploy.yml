@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repository
+      # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -28,8 +28,14 @@ jobs:
       - name: Build the project
         run: npm run build
 
+      # Configure Git user
+      - name: Set up Git user
+        run: |
+          git config --global user.email "bnsceo@gmail.com"
+          git config --global user.name "Anderson Paulino"
+
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        run: npx gh-pages -d dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
