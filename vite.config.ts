@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: "./", // This ensures assets are loaded correctly on GitHub Pages
+base: "/anderson-portfolio/",
   plugins: [
     react(),
     mode === 'development' &&
