@@ -33,13 +33,10 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # Ensure Vite outputs to `dist/`
+          path: ./dist # This is where Vite outputs the build
 
   deploy:
     environment:
