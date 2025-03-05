@@ -4,27 +4,31 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build project
-      run: npm run build
+      - name: Build project
+        run: npm run build
 
-    - name: Deploy to GitHub Pages
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npx gh-pages -d dist -r "https://${{ secrets.GITHUB_TOKEN }}@github.com/Anderson-s-Projects/anderson-portfolio.git"
+      - name: Configure Git
+        run: |
+          git config --global user.email "bnsceo@gmail.com"
+          git config --global user.name "bnsceo"
+
+      - name: Deploy to GitHub Pages
+        run: npx gh-pages -d dist -r "https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/Anderson-s-Projects/anderson-portfolio.git"
