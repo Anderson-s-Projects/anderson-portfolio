@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   deploy:
@@ -12,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
           node-version: '18'
 
@@ -26,9 +25,9 @@ jobs:
         run: npm run build
 
       - name: Configure Git
-        run: npx gh-pages -d dist -r "https://github.com/Anderson-s-Projects/anderson-portfolio.git"
-             git config --global user.email "bnsceo@gmail.com"
-             git config --global user.name "Anderson Paulino"
+        run: |
+          git config --global user.email "bnsceo@gmail.com"
+          git config --global user.name "Anderson Paulino"
 
       - name: Deploy to GitHub Pages
-        run: npx gh-pages -d dist -r "https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/Anderson-s-Projects/anderson-portfolio.git"
+        run: npx gh-pages -d dist -r "https://github.com/Anderson-s-Projects/anderson-portfolio.git"
