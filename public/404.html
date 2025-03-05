@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // Get the current path excluding the base path
+    const segment = window.location.pathname.replace('/anderson-portfolio', '');
+    // Redirect to the main index.html with the current path
+    window.location.href = '/anderson-portfolio/#' + segment;
+  </script>
+</head>
+<body>
+  <p>Redirecting to home page...</p>
+</body>
+</html>
