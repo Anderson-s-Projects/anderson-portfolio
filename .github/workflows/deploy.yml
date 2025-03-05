@@ -34,8 +34,11 @@ jobs:
           git config --global user.email "bnsceo@gmail.com"
           git config --global user.name "Anderson Paulino"
 
-      # Deploy to GitHub Pages
+      # Deploy to GitHub Pages with proper authentication
       - name: Deploy to GitHub Pages
-        run: npx gh-pages -d dist
+        run: |
+          git config --global user.email "bnsceo@gmail.com"
+          git config --global user.name "Anderson Paulino"
+          npx gh-pages -d dist -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Anderson-s-Projects/anderson-portfolio.git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
