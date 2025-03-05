@@ -31,6 +31,4 @@ jobs:
           git config --global user.name "Anderson Paulino"
 
       - name: Deploy to GitHub Pages
-        run: npm run deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx gh-pages -d dist -r "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Anderson-s-Projects/anderson-portfolio.git"
