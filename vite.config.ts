@@ -8,14 +8,14 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-base: "/anderson-portfolio/",
+  base: "/anderson-portfolio/", // Correct if deploying to a subpath (GitHub Pages)
   plugins: [
     react(),
-    mode === "development" && componentTagger(),
-  ].filter(Boolean),
+  ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      // This ensures the alias "@" maps to the "src" folder in the root of the project.
+      "@": path.resolve(__dirname, "src"),
     },
   },
 }));
