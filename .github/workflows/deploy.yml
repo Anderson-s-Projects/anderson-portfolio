@@ -1,4 +1,4 @@
-- name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages
   run: npx gh-pages -d dist
 
 on:
