@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: "/anderson-portfolio/", // ✅ Fix: Set correct base for GitHub Pages
+base: "/anderson-portfolio/",
   plugins: [
     react(),
     mode === "development" && componentTagger(),
