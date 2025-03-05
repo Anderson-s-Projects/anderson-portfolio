@@ -5,10 +5,28 @@
   <meta charset="utf-8">
   <title>Redirecting...</title>
   <script>
-    // Get the current path excluding the base path
-    const segment = window.location.pathname.replace('/anderson-portfolio', '');
-    // Redirect to the main index.html with the current path
-    window.location.href = '/anderson-portfolio/#' + segment;
+    // Single Page Apps for GitHub Pages
+    // MIT License
+    // https://github.com/rafgraph/spa-github-pages
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+    
+    // Redirect to the base path
+    const segmentCount = 1; // Assuming your site is at username.github.io/repo-name/
+    const path = window.location.pathname;
+    const redirectTo = path.indexOf('/anderson-portfolio/') === 0 ? 
+      path : 
+      '/anderson-portfolio/' + path.split('/').slice(segmentCount + 1).join('/');
+    
+    window.location.replace(redirectTo);
   </script>
 </head>
 <body>
