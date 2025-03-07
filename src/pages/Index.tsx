@@ -9,6 +9,7 @@ import Skills from '@/components/home/Skills';
 import Projects from '@/components/home/Projects';
 import Contact from '@/components/home/Contact';
 import Footer from '@/components/layout/Footer';
+import GhostWallEffect from '@/components/effects/GhostWallEffect';
 
 const Index = () => {
   useEffect(() => {
@@ -34,6 +35,9 @@ const Index = () => {
     <div className="min-h-screen w-full bg-deep-bg">
       {/* Interactive Particle Background */}
       <ParticleBackground />
+      
+      {/* Ghost Wall Latex Effect */}
+      <GhostWallEffect />
       
       {/* Navigation */}
       <Navbar />
