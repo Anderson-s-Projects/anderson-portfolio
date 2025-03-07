@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
 import ParticleBackground from '@/components/layout/ParticleBackground';
+import PaperWallEffect from '@/components/effects/PaperWallEffect';
 import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/home/Hero';
 import About from '@/components/home/About';
@@ -32,8 +33,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen w-full bg-deep-bg">
-      {/* Interactive Particle Background */}
+      {/* Interactive Background Effects */}
       <ParticleBackground />
+      <PaperWallEffect />
       
       {/* Navigation */}
       <Navbar />
