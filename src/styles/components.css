@@ -1,0 +1,118 @@
+
+@layer components {
+  .glass-panel {
+    @apply bg-glass-bg shadow-glass border border-glass-border backdrop-blur-md;
+  }
+  
+  .glass-card {
+    @apply bg-glass-bg/80 shadow-glass border border-glass-border backdrop-blur-md 
+           rounded-xl transition-all duration-300 hover:bg-glass-bg/90;
+  }
+  
+  .neuro-panel {
+    @apply bg-card-bg rounded-xl border border-neuro-light/10 transition-all duration-300;
+    box-shadow: 
+      -8px -8px 15px rgba(255, 255, 255, 0.05),
+      8px 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .neuro-inset {
+    @apply bg-card-bg rounded-xl border border-neuro-light/5 transition-all duration-300;
+    box-shadow: 
+      inset -6px -6px 12px rgba(255, 255, 255, 0.03),
+      inset 6px 6px 15px rgba(0, 0, 0, 0.25);
+  }
+  
+  .neuro-button {
+    @apply bg-card-bg rounded-xl border border-neuro-light/10
+           transition-all duration-300 hover:translate-y-[-2px];
+    box-shadow: 
+      -5px -5px 10px rgba(255, 255, 255, 0.05),
+      5px 5px 15px rgba(0, 0, 0, 0.25);
+    &:hover {
+      box-shadow: 
+        -7px -7px 15px rgba(255, 255, 255, 0.07),
+        7px 7px 20px rgba(0, 0, 0, 0.3);
+    }
+    &:active {
+      box-shadow: 
+        inset -2px -2px 5px rgba(255, 255, 255, 0.05),
+        inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+      transform: translateY(0px);
+    }
+  }
+  
+  .neuro-depth {
+    @apply relative bg-card-bg rounded-xl border border-neuro-light/10 transition-all duration-300;
+    box-shadow: 
+      -8px -8px 15px rgba(255, 255, 255, 0.05),
+      8px 8px 25px rgba(0, 0, 0, 0.3);
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: inherit;
+      box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.05),
+                 inset 4px 4px 12px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    &:hover:before {
+      opacity: 1;
+    }
+  }
+  
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-accent-gradient animate-gradient-x;
+    text-shadow: 0 0 20px rgba(155, 135, 245, 0.3);
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-bold mb-6 gradient-text;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl font-display text-text-secondary mb-8 max-w-2xl mx-auto;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(155, 135, 245, 0.5), 0 0 20px rgba(155, 135, 245, 0.3);
+  }
+
+  .section-container {
+    @apply w-full max-w-7xl mx-auto px-4 py-16 md:py-24;
+  }
+  
+  .mask-fade-right {
+    mask-image: linear-gradient(to right, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+  }
+  
+  .mask-fade-left {
+    mask-image: linear-gradient(to left, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, black 90%, transparent 100%);
+  }
+  
+  .mask-fade-horizontal {
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  }
+
+  .section-divider {
+    position: relative;
+    height: 100px;
+    margin-top: -100px;
+    z-index: 1;
+  }
+  
+  .section-divider::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom right, transparent 49%, #1A1F2C 50%);
+  }
+}
