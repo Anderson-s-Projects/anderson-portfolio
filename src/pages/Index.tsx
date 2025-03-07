@@ -27,8 +27,31 @@ const Index = () => {
       });
     });
     
-    // Page load animation
+    // Enhanced page load animation
     document.body.classList.add('animate-fade-in');
+    
+    // Add ripple effect on click
+    const handleClick = (e: MouseEvent) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      
+      const ripple = document.createElement('div');
+      ripple.className = 'ripple-animation';
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      
+      document.body.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.remove();
+      }, 1000);
+    };
+    
+    document.addEventListener('click', handleClick);
+    
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
   }, []);
 
   return (
